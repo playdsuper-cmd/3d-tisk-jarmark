@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#082c25">
+<title>3D Tisk Jarmark</title>
+<style>
+:root{--bg:#f3f7f5;--card:#fff;--ink:#142a25;--muted:#6d817b;--green:#0b9b61;--green2:#dff7ec;--line:#e1ebe6;--dark:#082c25;--shadow:0 12px 34px #12382a12}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;padding-bottom:100px}button,input{font:inherit}button{cursor:pointer}.app{max-width:1120px;margin:auto;padding:20px 16px 24px}.top{display:flex;align-items:center;gap:13px;margin:6px 0 22px}.logo{width:48px;height:48px;border-radius:16px;background:linear-gradient(145deg,#26d58b,#087a4d);display:grid;place-items:center;color:white;font-size:25px;box-shadow:0 8px 20px #0b9b6130}.title{flex:1;min-width:0}.title h1{font-size:clamp(20px,4vw,28px);letter-spacing:-.8px;margin:0;font-weight:850}.title p{margin:4px 0 0;color:var(--muted);font-size:13px}.iconbtn{border:1px solid var(--line);background:white;border-radius:14px;width:42px;height:42px;color:var(--ink);font-size:19px}.hero{background:linear-gradient(120deg,#07372c,#0a6042);border-radius:24px;padding:22px;color:white;display:flex;align-items:center;justify-content:space-between;gap:12px;box-shadow:var(--shadow);margin-bottom:18px}.hero small{opacity:.75;font-weight:650}.hero h2{font-size:23px;margin:5px 0 4px;letter-spacing:-.5px}.hero p{margin:0;color:#d2eee1;font-size:13px}.hero .cube{font-size:52px;opacity:.9}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:16px}.btn{border:0;border-radius:13px;padding:12px 15px;font-weight:750;display:inline-flex;align-items:center;justify-content:center;gap:8px}.primary{background:var(--green);color:white;box-shadow:0 7px 18px #0b9b6126}.secondary{background:white;color:var(--ink);border:1px solid var(--line)}.danger{background:#fff0ee;color:#b9362a}.panel{background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);overflow:hidden}.panelhead{padding:17px 18px;display:flex;justify-content:space-between;align-items:center;gap:10px;border-bottom:1px solid var(--line)}.panelhead h3{margin:0;font-size:16px}.panelhead p{margin:4px 0 0;color:var(--muted);font-size:12px}.search{width:100%;max-width:260px;border:1px solid var(--line);border-radius:12px;padding:10px 12px;background:#f9fbfa;outline-color:var(--green)}.tablewrap{overflow-x:auto}table{border-collapse:separate;border-spacing:0;width:100%;min-width:790px}th{background:#e5f7ef;color:#245345;font-size:11px;text-transform:uppercase;letter-spacing:.45px;text-align:left;padding:13px 12px;white-space:nowrap}td{padding:11px 10px;border-top:1px solid #edf2ef;vertical-align:middle}tr:hover td{background:#fbfefc}.productname{min-width:150px;font-weight:750;font-size:13px}.sub{display:block;color:var(--muted);font-size:11px;font-weight:500;margin-top:3px}.cell{width:100%;min-width:65px;border:1px solid #e0eae5;background:#fbfdfc;border-radius:9px;padding:9px 7px;color:var(--ink);outline-color:var(--green);font-size:13px}.cell.price{background:#eaf9f1;border-color:#d7f1e3;color:#087348;font-weight:800}.cell.name{min-width:130px}.summary{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:14px}.stat{background:#eff9f4;border:1px solid #e0f3e9;border-radius:14px;padding:14px}.stat span{display:block;color:#527166;font-size:11px}.stat strong{display:block;margin-top:5px;font-size:20px;letter-spacing:-.5px}.empty{padding:32px;text-align:center;color:var(--muted)}.bottomnav{position:fixed;z-index:10;bottom:0;left:0;right:0;padding:9px 12px calc(9px + env(safe-area-inset-bottom));background:#092c26;color:#a8c5bb;display:flex;justify-content:center;gap:8px;box-shadow:0 -8px 30px #092c261a}.navbtn{border:0;background:transparent;color:inherit;border-radius:14px;min-width:90px;max-width:180px;flex:1;padding:8px 10px;display:flex;align-items:center;justify-content:center;gap:6px;flex-direction:column;font-size:11px;font-weight:700}.navbtn .navico{font-size:20px;line-height:1}.navbtn.active{background:#164a3b;color:#55e6a1}.view{display:none}.view.active{display:block}.calcgrid{display:grid;grid-template-columns:1fr .8fr;gap:16px}.pad{padding:20px}.label{display:block;font-size:13px;font-weight:750;margin-bottom:8px}.biginput{width:100%;padding:16px;border:1px solid var(--line);border-radius:14px;font-size:25px;font-weight:800;outline-color:var(--green);background:#f9fcfa}.unit{position:relative}.unit em{position:absolute;right:15px;top:50%;transform:translateY(-50%);font-style:normal;color:var(--muted);font-weight:700}.presets{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}.preset{border:1px solid var(--line);background:#f5f8f6;padding:9px 12px;border-radius:10px;font-size:12px;font-weight:750}.result{background:linear-gradient(135deg,#e7f9ef,#f4fcf7);border:1px solid #d6f1e2;border-radius:18px;padding:23px;margin-top:18px}.result span{font-size:13px;color:#497362;font-weight:700}.result strong{display:block;color:#08764a;font-size:clamp(34px,7vw,48px);letter-spacing:-1.5px;margin-top:7px}.hint{color:var(--muted);font-size:12px;line-height:1.5}.settingslist{display:grid;gap:15px;padding:18px}.setting{border:1px solid var(--line);border-radius:15px;padding:16px}.setting h4{margin:0 0 6px}.setting p{margin:0 0 13px;color:var(--muted);font-size:12px;line-height:1.5}.settingrow{display:flex;gap:10px;align-items:center}.settingrow input{max-width:180px;width:100%;border:1px solid var(--line);border-radius:10px;padding:11px}.toast{position:fixed;z-index:20;left:50%;bottom:100px;transform:translateX(-50%);background:#123b2e;color:white;border-radius:12px;padding:11px 15px;font-size:13px;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:opacity .2s}.toast.show{opacity:1}.modalback{position:fixed;z-index:30;inset:0;background:#061d17a8;display:none;align-items:center;justify-content:center;padding:18px}.modalback.show{display:flex}.modal{background:white;border-radius:20px;padding:22px;width:min(440px,100%);box-shadow:0 25px 80px #0003}.modal h3{margin:0 0 8px}.modal p{color:var(--muted);font-size:13px}.modal input{width:100%;padding:12px;border:1px solid var(--line);border-radius:11px;margin:6px 0 14px}.modalactions{display:flex;gap:9px;justify-content:flex-end}.mobilehint{display:none}
+@media(max-width:700px){.app{padding:15px 12px 20px}.top{margin-bottom:16px}.hero{padding:17px;border-radius:19px}.hero h2{font-size:20px}.hero .cube{font-size:40px}.actions .btn{flex:1;font-size:12px;padding:11px 9px}.panelhead{align-items:flex-start;flex-direction:column}.search{max-width:none}.tablewrap{overflow:visible;padding:0 10px 10px}table,tbody,tr,td{display:block;width:100%;min-width:0}thead{display:none}tbody{display:grid;grid-template-columns:1fr;gap:10px;padding-top:10px}tr{position:relative;border:1px solid var(--line);border-radius:15px;padding:12px;background:white;box-shadow:0 3px 10px #102f1e06}td{border:0;padding:5px 0;display:grid;grid-template-columns:42% 58%;align-items:center;gap:8px}td:before{content:attr(data-label);font-size:11px;color:var(--muted);font-weight:700}td:first-child{display:block;padding:0 0 9px;border-bottom:1px solid var(--line);margin-bottom:5px}td:first-child:before{display:none}.productname{font-size:15px}.cell{min-width:0;padding:9px;font-size:14px}.cell.name{min-width:0}.summary{grid-template-columns:1fr 1fr;padding:10px}.stat:last-child{grid-column:span 2}.stat strong{font-size:18px}.calcgrid{grid-template-columns:1fr}.pad{padding:16px}.bottomnav{gap:2px}.navbtn{min-width:0;padding:8px 4px}.mobilehint{display:block;color:var(--muted);font-size:11px;padding:0 16px 10px}.result strong{font-size:40px}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="top">
+  <div class="logo">⬡</div>
+  <div class="title"><h1>3D TISK JARMARK</h1><p>Správa produktů a nákladů</p></div>
+  <button class="iconbtn" id="exportBtn" title="Export dat">⇧</button>
+  <button class="iconbtn" id="importBtn" title="Import dat">⋯</button>
+  <input type="file" id="importFile" accept="application/json" hidden>
+</header>
+<section class="hero">
+ <div><small>PRODEJNÍ PŘEHLED</small><h2>Měj v tom jasno. 🟢</h2><p>Produkty, náklady i ceny na jednom místě.</p></div><div class="cube">▧</div>
+</section>
+<section class="view active" id="productsView">
+ <div class="actions"><button class="btn primary" id="addBtn">＋ Přidat produkt</button><button class="btn secondary" id="resetBtn">↺ Obnovit ukázku</button></div>
+ <div class="panel">
+  <div class="panelhead"><div><h3>📋 Produkty</h3><p id="productCount">Přehled tvého jarmarku</p></div><input class="search" id="search" placeholder="⌕ Hledat produkt…"></div>
+  <div class="mobilehint">Klepni do políčka a uprav hodnotu. Změny se ukládají automaticky.</div>
+  <div class="tablewrap"><table><thead><tr><th>Produkt</th><th>Gramy</th><th>Filament</th><th>Ostatní náklady</th><th>Finální cena</th><th>Kusy</th><th></th></tr></thead><tbody id="tbody"></tbody></table></div>
+  <div class="summary"><div class="stat"><span>Celkem produktů</span><strong id="statProducts">0</strong></div><div class="stat"><span>Hodnota zásob</span><strong id="statValue">0 Kč</strong></div><div class="stat"><span>Celkem kusů</span><strong id="statPieces">0</strong></div></div>
+ </div>
+</section>
+<section class="view" id="calculatorView">
+ <div class="panel">
+  <div class="panelhead"><div><h3>🧮 Kalkulačka filamentu</h3><p>Rychlý výpočet ceny materiálu</p></div></div>
+  <div class="calcgrid">
+   <div class="pad">
+    <label class="label" for="gramsInput">Hmotnost filamentu (g)</label><div class="unit"><input class="biginput" id="gramsInput" type="number" min="0" step="0.1" value="45"><em>g</em></div>
+    <div class="presets"><button class="preset" data-grams="1">1 g</button><button class="preset" data-grams="5">5 g</button><button class="preset" data-grams="10">10 g</button><button class="preset" data-grams="25">25 g</button><button class="preset" data-grams="50">50 g</button><button class="preset" data-grams="100">100 g</button></div>
+    <div style="margin-top:22px"><label class="label" for="calcRate">Cena za 1 gram</label><div class="unit"><input class="biginput" id="calcRate" type="number" min="0" step="0.01" value="0.4"><em>Kč</em></div><p class="hint">Sazba se nastavuje v záložce Nastavení.</p></div>
+    <div class="result"><span>Výsledná cena materiálu</span><strong id="calcResult">18,00 Kč</strong><p class="hint" id="calcFormula">45 g × 0,40 Kč/g</p></div>
+   </div>
+   <div class="pad" style="background:#f8fbf9;border-left:1px solid var(--line)"><h3 style="margin-top:0">Rychlé příklady</h3><p class="hint">Při aktuální ceně filamentu:</p><div id="quickExamples"></div><p class="hint" style="margin-top:20px">Výpočet se průběžně aktualizuje podle zadané hmotnosti a ceny za gram.</p></div>
+  </div>
+ </div>
+</section>
+<section class="view" id="settingsView">
+ <div class="panel"><div class="panelhead"><div><h3>⚙️ Nastavení</h3><p>Přizpůsob si výpočty podle svého materiálu</p></div></div>
+ <div class="settingslist">
+  <div class="setting"><h4>Cena filamentu</h4><p>Kolik stojí jeden gram. Změna se projeví v kalkulačce i u všech produktů, kde nebyla cena filamentu ručně upravena.</p><div class="settingrow"><input type="number" min="0" step="0.01" id="rateSetting" value="0.4"><span>Kč / gram</span></div></div>
+  <div class="setting"><h4>Výchozí přirážka</h4><p>Použije se pro návrh prodejní ceny u nových produktů. Finální cenu můžeš vždy přepsat ručně.</p><div class="settingrow"><input type="number" min="0" step="1" id="markupSetting" value="100"><span>%</span></div></div>
+  <div class="setting"><h4>Data a záloha</h4><p>Data zůstávají v tomto prohlížeči. Pro jistotu si můžeš stáhnout zálohu nebo ji později importovat.</p><div class="actions" style="margin:0"><button class="btn primary" id="saveSettings">Uložit nastavení</button><button class="btn secondary" id="settingsExport">Exportovat zálohu</button></div></div>
+  <div class="setting"><h4>Uložená data</h4><p id="storageInfo">Změny se ukládají automaticky do tohoto zařízení.</p><button class="btn danger" id="clearData">Smazat všechna data</button></div>
+ </div></div>
+</section>
+</div>
+<nav class="bottomnav" aria-label="Hlavní navigace">
+ <button class="navbtn active" data-view="productsView"><span class="navico">▤</span><span>Tabulka</span></button>
+ <button class="navbtn" data-view="calculatorView"><span class="navico">▦</span><span>Kalkulačka</span></button>
+ <button class="navbtn" data-view="settingsView"><span class="navico">⚙</span><span>Nastavení</span></button>
+</nav>
+<div class="toast" id="toast">Uloženo</div>
+<div class="modalback" id="modalBack"><div class="modal"><h3 id="modalTitle">Přidat produkt</h3><p id="modalText">Zadej název produktu.</p><input id="modalInput" placeholder="Název produktu"><div class="modalactions"><button class="btn secondary" id="modalCancel">Zrušit</button><button class="btn primary" id="modalConfirm">Přidat</button></div></div></div>
+<script>
+const KEY='3dTiskJarmark.v1';
+const defaults=[
+{id:1,name:'Creeper záložka',grams:3,other:0,price:20,qty:10},
+{id:2,name:'Kostlivec záložka',grams:3,other:0,price:20,qty:10},
+{id:3,name:'Gear kolečka',grams:45,other:0,price:75,qty:10},
+{id:4,name:'ESO vlak obraz',grams:45,other:0,price:75,qty:2},
+{id:5,name:'Egg clicker',grams:0,other:5,price:50,qty:10},
+{id:6,name:'Yes/No clicker',grams:0,other:10,price:50,qty:5}
+];
+let state={rate:0.4,markup:100,products:defaults.map(x=>({...x}))};
+let toastTimer;
+const $=id=>document.getElementById(id);
+const money=n=>Number(n||0).toLocaleString('cs-CZ',{minimumFractionDigits:2,maximumFractionDigits:2})+' Kč';
+const num=n=>Number(n||0).toLocaleString('cs-CZ',{maximumFractionDigits:2});
+function material(p){return Math.max(0,Number(p.grams)||0)*state.rate}
+function suggested(p){return (material(p)+(Number(p.other)||0))*(1+state.markup/100)}
+function persist(){try{localStorage.setItem(KEY,JSON.stringify(state));$('storageInfo').textContent='Uloženo v tomto prohlížeči • '+new Date().toLocaleTimeString('cs-CZ',{hour:'2-digit',minute:'2-digit'});showToast('Změny uloženy')}catch(e){showToast('Uložení se nezdařilo')}}
+function showToast(s){$('toast').textContent=s;$('toast').classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').classList.remove('show'),1500)}
+function load(){try{const s=JSON.parse(localStorage.getItem(KEY));if(s&&Array.isArray(s.products)){state={...state,...s};state.products=state.products.map(p=>({...p,grams:Number(p.grams)||0,other:Number(p.other)||0,qty:Number(p.qty)||0,price:Number(p.price)||0}))}}catch(e){}}
+function render(){const q=$('search').value.trim().toLocaleLowerCase('cs');const rows=state.products.filter(p=>p.name.toLocaleLowerCase('cs').includes(q));$('tbody').innerHTML=rows.map(p=>{const m=material(p);return `<tr data-id="${p.id}">
+<td data-label="Produkt"><div class="productname">${escapeHtml(p.name)}<span class="sub">Náklad materiálu ${money(m)}</span></div></td>
+<td data-label="Gramy"><input class="cell" aria-label="Gramy" type="number" min="0" step="0.1" data-field="grams" value="${p.grams}"></td>
+<td data-label="Filament"><input class="cell" aria-label="Filament" type="number" min="0" step="0.01" data-field="material" value="${m.toFixed(2)}" title="Automaticky počítaná cena; můžeš ji ručně upravit"></td>
+<td data-label="Ostatní náklady"><input class="cell" aria-label="Ostatní náklady" type="number" min="0" step="0.01" data-field="other" value="${p.other}"></td>
+<td data-label="Finální cena"><input class="cell price" aria-label="Finální cena" type="number" min="0" step="0.01" data-field="price" value="${p.price}"></td>
+<td data-label="Kusy"><input class="cell" aria-label="Počet kusů" type="number" min="0" step="1" data-field="qty" value="${p.qty}"></td>
+<td data-label="Akce"><button class="iconbtn deleteRow" aria-label="Smazat produkt" title="Smazat produkt">⋮</button></td></tr>`}).join('');
+if(!rows.length)$('tbody').innerHTML='<tr><td class="empty">Žádný produkt nenalezen.</td></tr>';
+$('productCount').textContent=`${state.products.length} produktů • změny se ukládají automaticky`;
+$('statProducts').textContent=state.products.length;
+$('statValue').textContent=money(state.products.reduce((s,p)=>s+(Number(p.price)||0)*(Number(p.qty)||0),0));
+$('statPieces').textContent=state.products.reduce((s,p)=>s+(Number(p.qty)||0),0);
+$('rateSetting').value=state.rate;$('markupSetting').value=state.markup;$('calcRate').value=state.rate;renderCalc()}
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function renderCalc(){const g=Math.max(0,Number($('gramsInput').value)||0),rate=state.rate;$('calcRate').value=rate;$('calcResult').textContent=money(g*rate);$('calcFormula').textContent=`${num(g)} g × ${num(rate)} Kč/g`;$('quickExamples').innerHTML=[10,25,50,100].map(g=>`<div style="display:flex;justify-content:space-between;gap:12px;padding:13px 0;border-bottom:1px solid var(--line)"><span>${g} g</span><strong>${money(g*rate)}</strong></div>`).join('')}
+function nav(id){document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id===id));document.querySelectorAll('.navbtn').forEach(b=>b.classList.toggle('active',b.dataset.view===id));window.scrollTo({top:0,behavior:'smooth'})}
+document.querySelectorAll('.navbtn').forEach(b=>b.addEventListener('click',()=>nav(b.dataset.view)));
+$('tbody').addEventListener('change',e=>{const input=e.target.closest('input[data-field]');if(!input)return;const tr=input.closest('tr'),p=state.products.find(x=>x.id===Number(tr.dataset.id));if(!p)return;const f=input.dataset.field,v=Math.max(0,Number(input.value)||0);if(f==='material'){p.grams=state.rate?v/state.rate:0}else if(f==='price'){p.price=v}else{p[f]=v}persist();render()});
+$('tbody').addEventListener('click',e=>{const b=e.target.closest('.deleteRow');if(!b)return;const tr=b.closest('tr'),p=state.products.find(x=>x.id===Number(tr.dataset.id));if(confirm(`Opravdu smazat „${p.name}“?`)){state.products=state.products.filter(x=>x.id!==p.id);persist();render()}});
+$('search').addEventListener('input',render);
+$('addBtn').addEventListener('click',()=>{ $('modalTitle').textContent='Přidat produkt';$('modalText').textContent='Zadej název nového produktu.';$('modalInput').value='';$('modalBack').classList.add('show');$('modalInput').focus()});
+$('modalCancel').addEventListener('click',()=>$('modalBack').classList.remove('show'));
+$('modalConfirm').addEventListener('click',()=>{const name=$('modalInput').value.trim();if(!name){$('modalInput').focus();return}const p={id:Date.now(),name,grams:0,other:0,price:0,qty:1};p.price=Math.round(suggested(p)*100)/100;state.products.push(p);$('modalBack').classList.remove('show');persist();render();showToast('Produkt přidán')});
+$('modalInput').addEventListener('keydown',e=>{if(e.key==='Enter')$('modalConfirm').click()});
+$('gramsInput').addEventListener('input',renderCalc);
+document.querySelectorAll('[data-grams]').forEach(b=>b.addEventListener('click',()=>{$('gramsInput').value=b.dataset.grams;renderCalc()}));
+$('saveSettings').addEventListener('click',()=>{state.rate=Math.max(0,Number($('rateSetting').value)||0);state.markup=Math.max(0,Number($('markupSetting').value)||0);persist();render();showToast('Nastavení uloženo')});
+$('rateSetting').addEventListener('change',()=>{state.rate=Math.max(0,Number($('rateSetting').value)||0);persist();render()});
+$('markupSetting').addEventListener('change',()=>{state.markup=Math.max(0,Number($('markupSetting').value)||0);persist()});
+$('exportBtn').addEventListener('click',exportData);$('settingsExport').addEventListener('click',exportData);
+function exportData(){const blob=new Blob([JSON.stringify(state,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='3d-tisk-jarmark-zaloha.json';a.click();URL.revokeObjectURL(url);showToast('Záloha připravena')}
+$('importBtn').addEventListener('click',()=>$('importFile').click());
+$('importFile').addEventListener('change',async e=>{const f=e.target.files[0];if(!f)return;try{const s=JSON.parse(await f.text());if(!Array.isArray(s.products)||!Number.isFinite(Number(s.rate)))throw Error();state={rate:Math.max(0,Number(s.rate)),markup:Math.max(0,Number(s.markup)||0),products:s.products};persist();render();showToast('Záloha importována')}catch(err){alert('Soubor se nepodařilo načíst. Vyber platnou zálohu této aplikace.')}e.target.value=''});
+$('resetBtn').addEventListener('click',()=>{if(confirm('Obnovit ukázkové produkty? Aktuální seznam produktů bude nahrazen.')){state.products=defaults.map(x=>({...x}));persist();render()}});
+$('clearData').addEventListener('click',()=>{if(confirm('Opravdu smazat všechna uložená data? Tuto akci nelze vrátit.')){localStorage.removeItem(KEY);state={rate:0.4,markup:100,products:[]};persist();render();showToast('Data smazána')}});
+load();render();
+</script>
+</body>
+</html>
